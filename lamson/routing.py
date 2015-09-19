@@ -418,7 +418,7 @@ class RoutingBase(object):
                         # default one for now
                         self.HANDLERS[module] = DEFAULT_STATE_KEY
                 except:
-                    if self.LOG_EXCEPTIONS:
+                    if self.LOG_EXCEPTIONS and len(handlers) > 1:
                         LOG.exception("ERROR IMPORTING %r MODULE:" % module)
                     else:
                         raise
